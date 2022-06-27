@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    public MainPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public MainPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
 
@@ -17,9 +17,6 @@ public class MainPage {
 
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;
-
-
-
 
 
 }

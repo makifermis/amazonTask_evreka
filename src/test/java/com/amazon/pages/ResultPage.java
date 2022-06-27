@@ -12,9 +12,9 @@ import java.util.Collections;
 
 public class ResultPage {
 
-    public ResultPage(){
+    public ResultPage() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//div[@class='a-section aok-relative s-image-square-aspect']")
@@ -41,18 +41,16 @@ public class ResultPage {
     @FindBy(xpath = "(//span[@class='selection'])[1]")
     public WebElement size;
 
+    public void logInformation() {
 
-
-    public void logInformation(){
-
-        ArrayList<WebElement> sizes = new ArrayList<>(Arrays.asList(big,medium,small));
+        ArrayList<WebElement> sizes = new ArrayList<>(Arrays.asList(big, medium, small));
 
         for (WebElement size : sizes) {
             size.click();
-            System.out.println("iPhone 13  Size:"+size.getText());
+            System.out.println("iPhone 13  Size:" + size.getText());
             BrowserUtils.waitFor(1);
-            System.out.println("Color: "+ color.getText()+"  Price: "+price.getAttribute("textContent"));
-            System.out.println("Stock: "+stock.getText());
+            System.out.println("Color: " + color.getText() + "  Price: " + price.getAttribute("textContent"));
+            System.out.println("Stock: " + stock.getText());
         }
 
     }
